@@ -1,6 +1,6 @@
 import {Page} from 'ionic/ionic';
 import {DashCtrl} from '../dash/dash';
-import {ChatsCtrl} from '../chats/chats';
+import {ScheduleCtrl} from '../schedule/schedule'; 
 import {AccountCtrl} from '../account/account';
 
 @Page({
@@ -10,7 +10,7 @@ import {AccountCtrl} from '../account/account';
 export class TabsPage {
   constructor() {
     this.DashRoot = DashCtrl;
-    this.ChatsRoot = ChatsCtrl;
+    this.ScheduleRoot = ScheduleCtrl;
     this.AccountRoot = AccountCtrl;
   }
 }

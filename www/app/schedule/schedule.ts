@@ -3,9 +3,9 @@ import {Friends} from '../data/data';
 import {ChatDetailCtrl} from '../chat/chat';
 
 @Page({
-  templateUrl: 'app/chats/chats.html'
+  templateUrl: 'app/schedule/schedule.html'
 })
-export class ChatsCtrl {
+export class ScheduleCtrl {
   constructor(friends: Friends, nav: NavController, view: ViewController) {
     this.nav = nav;
     this.view = view;
