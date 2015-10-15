@@ -1,16 +1,16 @@
 <ion-navbar *navbar>
   <ion-title>
-    Chats
+    Speakers
   </ion-title>
 </ion-navbar>
 <ion-content>
   <ion-list>
-    <ion-item *ng-for="#chat of chats" (click)="passChat(chat)">
+    <ion-item *ng-for="#speaker of speakers" (click)="passChat(speaker)">
       <ion-avatar item-left>
-        <img [src]="chat.face" alt="">
+        <img [src]="speaker.face" alt="">
       </ion-avatar>
       <ion-item-content>
-        {{chat.name}}
+        {{speaker.name}}
       </ion-item-content>
     </ion-item>
   </ion-list>
