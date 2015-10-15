@@ -1,4 +1,4 @@
-import {Page, ActionSheet} from 'ionic/ionic';
+import {Page, ActionSheet, Modal} from 'ionic/ionic';
 import {Friends} from '../data/data';
 import {Control, ControlGroup} from 'angular2/angular2';
 
@@ -6,11 +6,12 @@ import {Control, ControlGroup} from 'angular2/angular2';
   templateUrl:"app/about/about.html",
 })
 export class AboutCtrl {
-  constructor(friends:Friends, actionSheet:ActionSheet){
+  constructor(friends:Friends, actionSheet:ActionSheet, modal:Modal){
     this.settings = new ControlGroup({
       enableFriends: new Control(true)
     });
     this.actionSheet = actionSheet;
+    this.modal = modal;
   }
 
   showActionSheet() {
@@ -39,5 +40,21 @@ export class AboutCtrl {
       // this.actionSheet = actionSheet;
       // this.actionSheet.close() to close it programatically
     })
+  }
+
+  showModal() {
+    this.modal.open(MyModal);
+  }
+}
+
+@Page({
+  template: `
+  <ion-pane padding>
+    <h2>Hurray Modals!</h2>
+    <button primary (click)="close()">Close</button>
+  </ion-pane>`
+})
+class MyModal extends Modal {
+  constructor() {
   }
 }
