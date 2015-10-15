@@ -5,13 +5,26 @@
 </ion-navbar>
 <ion-content>
   <ion-list>
-    <ion-item *ng-for="#speaker of speakers" (click)="passChat(speaker)">
-      <ion-avatar item-left>
-        <img [src]="speaker.face" alt="">
-      </ion-avatar>
-      <ion-item-content>
-        {{speaker.name}}
-      </ion-item-content>
-    </ion-item>
+    <ion-card *ng-for="#speaker of speakers">
+
+      <ion-item  (click)="passChat(speaker)">
+        <ion-avatar item-left>
+          <img [src]="speaker.face" alt="">
+        </ion-avatar>
+        <ion-item-content>
+          {{speaker.name}}
+        </ion-item-content>
+      </ion-item>
+
+      <ion-item>
+        <button clear small item-left>
+          <icon thumbs-up>Like</icon>
+        </button>
+        <button clear small item-right>
+          <icon ion-social-twitter>Follow</icon>
+        </button>
+      </ion-item>
+      
+    </ion-card>
   </ion-list>
 </ion-content>
