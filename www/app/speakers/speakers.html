@@ -7,9 +7,9 @@
   <ion-list>
     <ion-card *ng-for="#speaker of speakers">
 
-      <ion-item  (click)="passChat(speaker)">
+      <ion-item  (click)="passSpeaker(speaker)">
         <ion-avatar item-left>
-          <img [src]="speaker.face" alt="">
+          <img [src]="speaker.profile_pic" alt="">
         </ion-avatar>
         <ion-item-content>
           {{speaker.name}}
@@ -21,10 +21,12 @@
           <icon thumbs-up>Like</icon>
         </button>
         <button clear small item-right>
-          <icon ion-social-twitter>Follow</icon>
+          <a href="{{speaker.twitter}}" target="_blank">
+            <icon ion-social-twitter>Follow</icon>
+          </a>
         </button>
       </ion-item>
-      
+
     </ion-card>
   </ion-list>
 </ion-content>

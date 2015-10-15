@@ -1,20 +1,27 @@
 import {Page, NavController, ViewController} from 'ionic/ionic';
-import {Friends} from '../data/data';
+import {SpeakersService} from '../data/speakers';
 import {SpeakerCtrl} from '../speaker/speaker';
 
 @Page({
   templateUrl: 'app/speakers/speakers.html'
 })
 export class SpeakersCtrl {
-  constructor(friends: Friends, nav: NavController, view: ViewController) {
+  constructor(
+    nav: NavController,
+    view: ViewController,
+    speakers:SpeakersService
+  ) {
+
     this.nav = nav;
     this.view = view;
-    this.speakers = friends.all();
-
+    speakers.all().subscribe(res => {
+      this.speakers = res;
+      console.log(this.speakers)
+    });
 
   }
 
-  passChat(speaker) {
+  passSpeaker(speaker) {
     this.nav.push(SpeakerCtrl, {
       speaker: speaker
     });
