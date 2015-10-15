@@ -1,6 +1,6 @@
 import {Page, NavController, ViewController} from 'ionic/ionic';
 import {Friends} from '../data/data';
-import {ChatDetailCtrl} from '../chat/chat';
+import {SpeakerCtrl} from '../speaker/speaker';
 
 @Page({
   templateUrl: 'app/speakers/speakers.html'
@@ -15,8 +15,8 @@ export class SpeakersCtrl {
   }
 
   passChat(speaker) {
-    this.nav.push(ChatDetailCtrl, {
-      chat: speaker
+    this.nav.push(SpeakerCtrl, {
+      speaker: speaker
     });
   }
 }

@@ -2,12 +2,12 @@ import {Page, NavParams} from 'ionic/ionic';
 import {Injectable} from "angular2/angular2";
 @Injectable()
 @Page({
-  templateUrl: 'app/chat/chat.html'
+  templateUrl: 'app/speaker/speaker.html'
 })
 
-export class ChatDetailCtrl {
+export class SpeakerCtrl {
    constructor(params: NavParams) {
-    this.chat = params.get('chat');
+    this.speaker = params.get('speaker');
    }
 
 
