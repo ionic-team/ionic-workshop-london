@@ -1,4 +1,4 @@
-import {Page, ActionSheet, Modal} from 'ionic/ionic';
+import {Page, ActionSheet, Modal, Popup} from 'ionic/ionic';
 import {Friends} from '../data/data';
 import {Control, ControlGroup} from 'angular2/angular2';
 
@@ -6,12 +6,13 @@ import {Control, ControlGroup} from 'angular2/angular2';
   templateUrl:"app/about/about.html",
 })
 export class AboutCtrl {
-  constructor(friends:Friends, actionSheet:ActionSheet, modal:Modal){
+  constructor(friends:Friends, actionSheet:ActionSheet, modal:Modal, popup:Popup){
     this.settings = new ControlGroup({
       enableFriends: new Control(true)
     });
     this.actionSheet = actionSheet;
     this.modal = modal;
+    this.popup = popup;
   }
 
   showActionSheet() {
@@ -44,6 +45,13 @@ export class AboutCtrl {
 
   showModal() {
     this.modal.open(MyModal);
+  }
+
+  showPopup() {
+    this.popup.alert({
+      title: "hi there",
+      template: "You made a popup, way to go!"
+    })
   }
 }
 
