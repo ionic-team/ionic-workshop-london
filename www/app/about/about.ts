@@ -3,13 +3,12 @@ import {Friends} from '../data/data';
 import {Control, ControlGroup} from 'angular2/angular2';
 
 @Page({
-  templateUrl:"app/account/account.html",
+  templateUrl:"app/about/about.html",
 })
-export class AccountCtrl {
+export class AboutCtrl {
   constructor(friends:Friends){
     this.settings = new ControlGroup({
       enableFriends: new Control(true)
     });
   }
 }
-
