@@ -3,20 +3,20 @@ import {Friends} from '../data/data';
 import {ChatDetailCtrl} from '../chat/chat';
 
 @Page({
-  templateUrl: 'app/chats/chats.html'
+  templateUrl: 'app/speakers/speakers.html'
 })
-export class ChatsCtrl {
+export class SpeakersCtrl {
   constructor(friends: Friends, nav: NavController, view: ViewController) {
     this.nav = nav;
     this.view = view;
-    this.chats = friends.all();
+    this.speakers = friends.all();
 
 
   }
 
-  passChat(chat) {
+  passChat(speaker) {
     this.nav.push(ChatDetailCtrl, {
-      chat: chat
+      chat: speaker
     });
   }
 }
