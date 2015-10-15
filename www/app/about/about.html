@@ -3,12 +3,8 @@
     About
   </ion-title>
 </ion-navbar>
-<ion-content>
+<ion-content padding>
   <ion-list>
-    <form [ng-form-model]="settings">
-      <ion-switch ng-control="enableFriends">
-        Enable Friends
-      </ion-switch>
-    </form>
+    <button block (click)="showActionSheet()">Show Action Sheet</button>
   </ion-list>
 </ion-content>
