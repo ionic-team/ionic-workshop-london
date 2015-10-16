@@ -1,4 +1,4 @@
-import {Page, ActionSheet, Modal, Popup, Animation} from 'ionic/ionic';
+import {Page, ActionSheet, Modal, Popup, Animation, Camera} from 'ionic/ionic';
 import {Friends} from '../data/data';
 import {Control, ControlGroup} from 'angular2/angular2';
 
@@ -75,6 +75,16 @@ export class AboutCtrl {
     this.animation.pause();
   }
 
+  takePhoto() {
+    Camera.getPicture({
+      targetWidth: 400,
+      targetHeight: 400
+    }).then((data) => {
+      // Camera data
+      let base64Image = "data:image/jpeg;base64," + data;
+      document.querySelector('#ionitron').src = base64Image;
+    })
+  }
 }
 
 @Page({
