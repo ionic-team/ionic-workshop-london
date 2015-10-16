@@ -1,5 +1,5 @@
 import {Page} from 'ionic/ionic';
-import {DashCtrl} from '../dash/dash';
+import {SessionsCtrl} from '../sessions/sessions';
 import {SpeakersCtrl} from '../speakers/speakers';
 import {AboutCtrl} from '../about/about';
 
@@ -9,7 +9,7 @@ import {AboutCtrl} from '../about/about';
 
 export class TabsPage {
   constructor() {
-    this.DashRoot = DashCtrl;
+    this.SessionsRoot = SessionsCtrl;
     this.SpeakersRoot = SpeakersCtrl;
     this.AboutRoot = AboutCtrl;
   }

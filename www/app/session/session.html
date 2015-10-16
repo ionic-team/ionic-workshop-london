@@ -1,0 +1,22 @@
+<ion-navbar *navbar>
+  <ion-title>
+    {{session.name}}
+  </ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-card>
+    <ion-item *ng-if="session.speaker">
+      <item-left>Speaker:</item-left>
+      <ion-item-content>{{session.speaker}}</ion-item-content>
+    </ion-item>
+    <ion-card-content *ng-if="session.description">
+      {{session.description}}
+    </ion-card-content>
+    <ion-item *ng-if="session.location">
+      <item-left>Location:</item-left>
+      <ion-item-content>{{session.location}}</ion-item-content>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

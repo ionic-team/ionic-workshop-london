@@ -1,0 +1,18 @@
+<ion-navbar *navbar>
+  <ion-title>Dash</ion-title>
+</ion-navbar>
+<ion-content padding>
+  <ion-list *ng-for="#day of sessions">
+    <ion-header>
+      <icon calendar> {{day.day}}</icon>
+    </ion-header>
+    <div *ng-for="#hour of day.sessions">
+      <list-header>
+        {{hour.time}}
+      </list-header>
+      <ion-item *ng-for="#session of hour.talks" (click)="passSession(session)">
+        {{session.name}}
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
