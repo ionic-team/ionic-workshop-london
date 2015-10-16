@@ -1,4 +1,4 @@
-import {Page, ActionSheet, Modal, Popup} from 'ionic/ionic';
+import {Page, ActionSheet, Modal, Popup, Animation} from 'ionic/ionic';
 import {Friends} from '../data/data';
 import {Control, ControlGroup} from 'angular2/angular2';
 
@@ -13,6 +13,18 @@ export class AboutCtrl {
     this.actionSheet = actionSheet;
     this.modal = modal;
     this.popup = popup;
+
+    this.animation = new Animation();
+    this.animation
+      .duration(2000)
+
+    var ionitronSpin = new Animation(document.querySelector('#ionitron'));
+    ionitronSpin
+      .from('rotate', '0deg')
+      .to('rotate', '360deg')
+
+    this.animation.add(ionitronSpin);
+
   }
 
   showActionSheet() {
@@ -53,6 +65,16 @@ export class AboutCtrl {
       template: "You made a popup, way to go!"
     })
   }
+
+  play() {
+    console.log(this.animation)
+    this.animation.play();
+  }
+
+  pause() {
+    this.animation.pause();
+  }
+
 }
 
 @Page({
