@@ -8,10 +8,15 @@
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$colors: (primary: #387ef5, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222222);
+$colors: (primary: #499);
+$background-color: #eff;
+$toolbar-background-color: #cee;
+$toolbar-inactive-color: #5bb;
+$text-color: #022;
 
 // Ionic Sass
 // ---------------------------------
+//@import "themes/dark";
 @import "ionic";
 
 // App Sass
