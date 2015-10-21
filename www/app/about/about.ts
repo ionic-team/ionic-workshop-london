@@ -13,12 +13,13 @@ export class AboutCtrl {
     this.actionSheet = actionSheet;
     this.modal = modal;
     this.popup = popup;
+    var ionitron = document.querySelector('#ionitron')
 
     this.animation = new Animation();
     this.animation
       .duration(2000)
 
-    var ionitronSpin = new Animation(document.querySelector('#ionitron'));
+    var ionitronSpin = new Animation(ionitron);
     ionitronSpin
       .from('rotate', '0deg')
       .to('rotate', '360deg')
